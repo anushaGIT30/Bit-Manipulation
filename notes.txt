@@ -1,0 +1,73 @@
+1.if we want to convert decimal to binary we have to divide with by 2 store the remainder and print it in the reverse order
+ex: converting 13 to binary value
+  13/2 remainder -1
+  6/2 remainder-0
+  3/2 remainder-1
+  1 -remainder-1 now we have to print in downwards (1 1 0 1)-(13)
+2. if we want to convert binary to decimal we will multiply with 2 from right
+ex: (1 1 0 1)- 1*2 power 0+ 0*2 power 1+ 1 * 2 power 2 + 1 * 2 power 3=1*1+0+1*4+1*8=13
+3. if we want to print the number lets say    int a=13 the computer will convert them into binarry format in tems of 0 and 1
+   integer contains 32 bit representtion so 1101 will take 4 positions and rest of all it is 0's.
+4. 1's complement: flipping the bits 0->1 and 1->0
+5. 2's compliment: 1.first do 1 's complement    
+                   2. add 1 to it
+                   ex: 13->1 1 0 1
+                           0 0 1 0->1's complement
+                                  1
+                            (0  0  1  1)->2's complement
+6. operators in bitwise :
+   1.And -all true means true one false means false
+   2. or  -all false means false one true means true
+   3.xor - if it is even [(0,0) ,(1,1)]->>>0
+           if it is odd[(1,0) ,(0,1)]->>>1
+    4.shift - 1.right shift >>
+               ex: x=13>>1
+               00000....1101-> 0110(6)
+               x=13>>2
+               0011
+               x=13>>4
+               0000
+       ........ the x right shift means n/2 power(k)  
+*important point:
+ if we  are storing the positive number for example: x=+13
+ ---we know that there are 32 bits the 31th bit is reserved for sign (+/-)   
+ --- 0 for positive and 1 for negative
+ ---to store the value of x =-13   1. first we write down the plain +ve number
+                                   2. then if we want to store the -ve sign the computer will converts in to 2's complement
+                                     i.e.00000.......1101(binary)
+                                         11111.......0010(1's complement)
+                                         next adding +1 to it 
+                                         11111.......0011(here we can see that the 31 st bit is 1 hence it is a -ve number)
+              2. left shift << ...the formula of left shift =n*2(power k)
+              ex: 13<<1 = 11010=(26)
+              if we want to left shift the INT_MAX value it will be  the oveflow case
+    4. NOT operator(~)
+    (1) first flip the bits
+    (2) check if it is negative
+        -> if -ve find 2's complement
+        -> else stop
+       ex: 00000.....101(5)
+      ***** this case in terms of positive number
+       1.  11111.....010(flip it)
+       2.  it is negative convert into 2's complement
+           10000.....101(1 's complement) 
+                       1(add 1 to it)
+           1000...... 110 (2's complement)
+                     hence the ans is -6
+      ***** this case in terms of negative number
+      x=~(-6)
+      storing -6 interms of 2's complement format
+      00000........110(binary)
+      11111........001(1's complement)
+                     1(add 1)
+      11111........010 (2's complement) this is the computer will store
+      1.first step flip 
+      00000........101(the -ve sign is changes into positive)
+      ans=5 
+
+
+
+
+
+
+            
