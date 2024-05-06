@@ -23,3 +23,4 @@ int main() {
     
     return 0;
 }
+// the time and space complexity is o(1)
