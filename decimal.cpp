@@ -4,14 +4,14 @@ using namespace std;
 int convert_Binary_to_decimal(string s) {
     // We are traversing in a backward direction, i.e., from right to left
     int len = s.length();
-    int n = 0, p = 1;
+    int num = 0, p = 1;
     for (int i = s.length() - 1; i >= 0; i--) {
         if (s[i] == '1') {
-            n += p;
+            num += p;
         }
         p *= 2;
     }
-    return n;
+    return num;
 }
 
 int main() {
